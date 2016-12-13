@@ -14,7 +14,8 @@ class CreatePecasTable extends Migration
     public function up()
     {
         Schema::create('pecas', function (Blueprint $table) {
-            $table->increments('peca_id');
+            $table->increments('pecas_id');
+            $table->integer('user_id')->unsigned();
             $table->string('nome_peca');
             $table->string('link_thing')->nullable();
             $table->integer('quant_peca')->unsigned();

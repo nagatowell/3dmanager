@@ -15,14 +15,15 @@ class CreateImpressoesTable extends Migration
     {
         Schema::create('impressoes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('impressao_id');
+            $table->increments('impressoes_id');
+            $table->integer('user_id')->unsigned();
             $table->float('camada_impressao');
             $table->integer('infill');
-            $table->boolean('suporte');
+            $table->integer('status_imp_id')->unsigned();
             $table->float('peso_impressao');
             $table->string('tempo_impressao');
+            $table->string('observacoes');
             $table->integer('peca_id')->unsigned();
-            $table->boolean('sucesso');
             $table->integer('filamento_id')->unsigned();
             $table->integer('pedido_id')->unsigned();
             $table->integer('quant_impressao');

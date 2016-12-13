@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pedidos extends Model
 {
     protected $table = 'pedidos';
-    public $primaryKey = 'pedido_id';
+    public $primaryKey = 'pedidos_id';
     public $timestamps = true;//Define as colunas create_at e update_at
 	protected $fillable = array('nome_comprador', 'data_pedido', 'venda_id', 'detalhes_pedido');//Valores que são aceitos pelo MassAssigment
 

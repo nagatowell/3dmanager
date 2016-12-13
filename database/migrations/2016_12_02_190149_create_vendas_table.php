@@ -14,7 +14,8 @@ class CreateVendasTable extends Migration
     public function up()
     {
         Schema::create('vendas', function (Blueprint $table) {
-            $table->increments('venda_id');
+            $table->increments('vendas_id');
+            $table->integer('user_id')->unsigned();
             $table->float('valor_venda');
             $table->string('data_venda');
             $table->string('data_postagem');

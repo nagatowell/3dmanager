@@ -15,11 +15,12 @@ class CreateFilamentosTable extends Migration
     {
         Schema::create('filamentos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('filamento_id');
+            $table->increments('filamentos_id');
+            $table->integer('user_id')->unsigned();
             $table->float('valor');
-            $table->integer('material_id')->unsigned();
+            $table->integer('materiais_id')->unsigned();
             $table->integer('cores_id')->unsigned();
-            $table->integer('fornecedor_id')->unsigned();
+            $table->integer('fornecedores_id')->unsigned();
             $table->float('peso');
             $table->timestamps();
         });

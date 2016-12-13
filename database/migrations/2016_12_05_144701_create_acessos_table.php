@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFornecedoresTable extends Migration
+class CreateAcessosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFornecedoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('fornecedores', function (Blueprint $table) {
+        Schema::create('acessos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('fornecedor_id');
-            $table->string('nome_fornecedor');
-            $table->string('site_fornecedor')->nullable();
+            $table->increments('acessos_id');
+            $table->integer('user_id')->unsigned();
+            $table->string('nome_acesso');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateFornecedoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fornecedores');
+        Schema::dropIfExists('acessos');
     }
 }

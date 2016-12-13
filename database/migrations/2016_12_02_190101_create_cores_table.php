@@ -16,6 +16,7 @@ class CreateCoresTable extends Migration
         Schema::create('cores', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('cores_id');
+            $table->integer('user_id')->unsigned();
             $table->string('nome_cor');
             $table->timestamps();
         });

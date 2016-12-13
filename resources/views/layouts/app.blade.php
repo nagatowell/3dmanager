@@ -42,9 +42,69 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                
+
+                <ul class="nav navbar-nav left">
+                
+                    <li><a href="{{ url('/home') }}">Home</a>
+                    </li>
+                    @if (!Auth::guest())
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Cadastros <span class="caret"></span>
+                            </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{action('CorController@novo')}}">Nova Cor</a>
+                            </li>
+                            <li><a href="{{action('CorController@listar')}}">Todas as Cores</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="{{action('FornecedorController@novo')}}">Novo Fornecedor</a>
+                            </li>
+                            <li><a href="{{action('FornecedorController@listar')}}">Todos os Fornecedores</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="{{action('MaterialController@novo')}}">Novo Material</a>
+                            </li>
+                            <li><a href="{{action('MaterialController@listar')}}">Todos os Materiais</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a href="{{action('FilamentoController@novo')}}">Novo Filamento</a>
+                            </li>
+                            <li><a href="{{action('FilamentoController@listar')}}">Todos os Filamentos</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a href="{{action('StatusImpController@novo')}}">Novo Status</a>
+                            </li>
+                            <li><a href="{{action('StatusImpController@listar')}}">Todos os Status</a>
+                            </li>
+                            
+                        </ul>                   
+
+                     </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Usuários <span class="caret"></span>
+                            </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/register') }}">Registrar um Usuário</a>
+                            </li>
+                            <li><a href="{{url('/usuarios') }}">Todos os usuários</a>
+                            </li>
+                        </ul>
+                    </li>
+                    @endif
+                </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
