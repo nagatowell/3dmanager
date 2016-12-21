@@ -86,6 +86,19 @@
                             <li><a href="{{action('StatusImpController@listar')}}">Todos os Status</a>
                             </li>
                             
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a href="{{action('PecaController@novo')}}">Nova Peça</a>
+                            </li>
+                            <li><a href="{{action('PecaController@listar')}}">Todos as Peças</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+                            
+                            <li><a href="{{action('PedidoController@novo')}}">Novo Pedido</a>
+                            </li>
+                            <li><a href="{{action('PedidoController@listar')}}">Todos os Pedidos</a>
+                            </li>
                         </ul>                   
 
                      </li>

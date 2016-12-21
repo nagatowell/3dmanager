@@ -10,7 +10,7 @@
 	<input type="hidden" name="_token" value="{{{csrf_token()}}}"/>
 	<div class="form-group">
 		<label>Valor</label>
-		<input name="valor" class="form-control" type="number" value="{{ $s->valor }}">
+		<input name="valor" class="form-control" type="number" step="0.10" value="{{ $s->valor }}">
 	</div>
 	<div class="form-group">
 		<label>Material</label>
@@ -49,7 +49,7 @@
 	</div>
 	<div class="form-group">
 		<label>Peso</label>
-		<input name="peso" class="form-control" type="number" value="{{ $s->peso }}">
+		<input name="peso" class="form-control" type="number"  step="0.10" value="{{ $s->peso }}">
 	</div>
 	<button type="submit" class="btn btn-primary btn-block">Atualizar</button>
 </imput>

@@ -71,6 +71,25 @@ Route::get('/', function () {
 	Route::get('/status/mostra/{id}', 'StatusImpController@detalhes')->where ('id', '[0-9]+')->middleware('auth');
 	Route::get('/status/remove/{id}', 'StatusImpController@remove')->where ('id', '[0-9]+')->middleware('auth');
 
+//Peças
+	Route::get('/pecas', 'PecaController@listar');
+	Route::get('/pecas/novo', 'PecaController@novo')->middleware('auth');
+	Route::post('/pecas/novo', 'PecaController@novo')->middleware('auth');
+	Route::post('/pecas/adicionar', 'PecaController@adicionar')->middleware('auth');
+	Route::post('/peca/alterar/{id}', 'PecaController@alterar')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/peca/atualizar/{id}', 'PecaController@atualizar')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/peca/mostra/{id}', 'PecaController@detalhes')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/peca/remove/{id}', 'PecaController@remove')->where ('id', '[0-9]+')->middleware('auth');
+//Peças
+	Route::get('/pedidos', 'PedidoController@listar');
+	Route::get('/pedidos/novo', 'PedidoController@novo')->middleware('auth');
+	Route::post('/pedidos/novo', 'PedidoController@novo')->middleware('auth');
+	Route::post('/pedidos/adicionar', 'PedidoController@adicionar')->middleware('auth');
+	Route::post('/pedido/alterar/{id}', 'PedidoController@alterar')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/pedido/atualizar/{id}', 'PedidoController@atualizar')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/pedido/mostra/{id}', 'PedidoController@detalhes')->where ('id', '[0-9]+')->middleware('auth');
+	Route::get('/pedido/remove/{id}', 'PedidoController@remove')->where ('id', '[0-9]+')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

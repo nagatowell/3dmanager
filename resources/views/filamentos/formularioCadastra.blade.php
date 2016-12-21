@@ -45,11 +45,11 @@
 	</div>
 	<div class="form-group">
 		<label>Valor (R$)</label>
-		<input name="valor" class="form-control" type="number" value="{{ old('valor') }}">
+		<input name="valor" class="form-control" type="number" step="0.10" value="{{ old('valor') }}">
 	</div>	
 	<div class="form-group">
 		<label>Peso (g)</label>
-		<input name="peso" class="form-control" type="number" value="{{ old('peso') }}">
+		<input name="peso" class="form-control" type="number" step="0.10" value="{{ old('peso') }}">
 	</div>
 
 	<button type="submit" class="btn btn-primary btn-block">Adicionar</button>
