@@ -27,13 +27,8 @@
 		<input name="data_pedido" class="form-control" type="date" value="{{ old('data_pedido') }}">
 	</div>
 	<div class="form-group">
-		<label>Venda</label>
-		<input name="venda_id" class="form-control" value="{{ old('venda_id') }}">
-	</div>
-	<div class="form-group">
 		<label>Detalhes</label><br>
-		<textarea name="detalhes_pedido" rows="5" cols="125">{{ old('detalhes_pedido') }}
-		</textarea>
+		<textarea name="detalhes_pedido" rows="5" cols="125">{{ old('detalhes_pedido') }}</textarea>
 	</div>
 	<button type="submit" class="btn btn-primary btn-block">Adicionar</button>
 @stop

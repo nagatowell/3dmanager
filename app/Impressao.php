@@ -22,4 +22,12 @@ class Impressao extends Model
     {
         return $this->belongsTo('App\Pedidos', 'pedido_id');
     }
+    public function status()
+    {
+        return $this->belongsTo('App\StatusImpressao', 'status_imp_id');
+    }
+    public function filamento()
+    {
+        return $this->belongsTo('App\Filamento', 'filamento_id');
+    }
 }

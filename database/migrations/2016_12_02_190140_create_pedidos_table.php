@@ -18,7 +18,7 @@ class CreatePedidosTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('nome_comprador');
             $table->string('data_pedido');
-            $table->integer('venda_id')->unsigned();
+            $table->integer('vendas_id')->unsigned()->nullable();
             $table->string('detalhes_pedido', 512);
             $table->timestamps();
         });

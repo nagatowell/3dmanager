@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pedidos;
 use Auth;
+use App\Venda;
+
 class PedidoController extends Controller
 {
     public function listar(){
 	    $pedido = Pedidos::where('user_id', '=', Auth::id())
 	    ->simplePaginate(5);
+	    //return $pedido;
+	    return view('pedidos/listar',['pedidos'=>$pedido]);
+    }
+    public function listarId($id){
+	    $pedido = Pedidos::where('pedidos_id', '=', $id)->where('user_id', '=', Auth::id())->simplePaginate(5);
 	    return view('pedidos/listar',['pedidos'=>$pedido]);
 
     }
@@ -18,13 +25,14 @@ class PedidoController extends Controller
 	}
 
 	public function adicionar(Request $request){
+		//return $request;
 			$pedido = new Pedidos;
 			$pedido->nome_comprador = $_POST['nome_comprador'];
 			$pedido->data_pedido = $_POST['data_pedido'];
-			$pedido->venda_id = $_POST['venda_id'];
+			//$pedido->vendas_id = 0;
 			$pedido->detalhes_pedido = $_POST['detalhes_pedido'];
 			$pedido->user_id = Auth::id();
-			$pedido->save();
+			$pedido->save();			
 	
 		return redirect()->action('PedidoController@listar');
 	}

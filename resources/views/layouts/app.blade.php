@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', '3D Manager') }}
                     </a>
                 </div>
 
@@ -98,6 +98,18 @@
                             <li><a href="{{action('PedidoController@novo')}}">Novo Pedido</a>
                             </li>
                             <li><a href="{{action('PedidoController@listar')}}">Todos os Pedidos</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="{{action('VendaController@listar')}}">Todos as Vendas</a>
+                            </li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href="{{action('ImpressaoController@novo')}}">Nova Impressão</a>
+                            </li>
+                            <li><a href="{{action('ImpressaoController@listar')}}">Todos as Impressões</a>
                             </li>
                         </ul>                   
 

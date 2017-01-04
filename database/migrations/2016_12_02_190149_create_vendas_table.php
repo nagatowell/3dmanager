@@ -16,12 +16,12 @@ class CreateVendasTable extends Migration
         Schema::create('vendas', function (Blueprint $table) {
             $table->increments('vendas_id');
             $table->integer('user_id')->unsigned();
-            $table->float('valor_venda');
-            $table->string('data_venda');
-            $table->string('data_postagem');
-            $table->float('valor_frete');
-            $table->string('cep_frete');
-            $table->integer('pedido_id')->unsigned();
+            $table->float('valor_venda')->nullable();
+            $table->string('data_venda')->nullable();
+            $table->string('data_postagem')->nullable();
+            $table->float('valor_frete')->nullable();
+            $table->string('cep_frete')->nullable();
+            $table->integer('pedidos_id')->unsigned();
             $table->timestamps();
         });
     }
